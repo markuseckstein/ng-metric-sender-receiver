@@ -14,7 +14,7 @@ export class MetricRelayer {
     private log: any;
 
     constructor(private statsDServerUrl) {
-        this.log = new statistik(statsDServerUrl);
+        this.log = statistik(statsDServerUrl);
     }
 
     public receive(dp: DataPoint) {
