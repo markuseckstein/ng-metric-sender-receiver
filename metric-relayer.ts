@@ -1,5 +1,4 @@
-declare var require;
-const statistik = require('statistik');
+import * as statistik from 'statistik';
 
 import { DataPoint } from './data-point';
 
@@ -10,11 +9,12 @@ export class MetricRelayer {
         t: 'timing',
         g: 'gauge',
         s: 'send'
-    }
+    };
+
     private log: any;
 
     constructor(private statsDServerUrl) {
-        this.log = statistik(statsDServerUrl);
+        this.log = new statistik(statsDServerUrl);
     }
 
     public receive(dp: DataPoint) {
