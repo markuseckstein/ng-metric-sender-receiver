@@ -12,8 +12,8 @@ let app = require('http').createServer(handler)
 let io = require('socket.io')(app);
 let fs = require('fs');
 
-app.listen(8124);
-console.log(`ng-metric-receiver server websocket listening on port ${8124}`);
+app.listen(listenPort);
+console.log(`ng-metric-receiver server websocket listening on port ${listenPort}`);
 
 function handler(req, res) {
     fs.readFile(__dirname + '/www/index.html',
